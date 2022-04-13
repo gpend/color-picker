@@ -6,19 +6,31 @@ async function getColors (color, mode){
     return data
 }
 
-function organizeColors (colorArray){
-    console.log(colorArray)
-    const getColorHTML = colorArray.map((color, i) =>{
-        `<div style="background-color: ${color.hex.value};" class=color${i}>`
+function getColorHTML (colorArray){
+    // console.log(colorArray)
+    const colorHTML = colorArray.map((color, i) =>{
+        // console.log(color.hex.value)
+        return `<div style="background-color: ${color.hex.value};" class=color${i}></div>`
+    })//.join('')
+    return colorHTML
+}
+
+function getColorLabelHTML(colorArray){
+    const colorLabelHTML = colorArray.map(color => {
+        console.log(`<p>${color.hex.value}</p>`)
+        return `<p>${color.hex.value}</p>`
     })
-    return getColorHTML
+
+    return colorLabelHTML
 }
 
 function handleClick () {
     let color = document.getElementById('colorSeed').value.slice(1)
     const theme = document.getElementById('theme_picker').value
-    // const colorData = 
-    getColors(color, theme).then(data => document.getElementsByClassName('colors').innerHtml =  organizeColors(data.colors).join(''))
+    getColors(color, theme).then(data =>  {
+        document.querySelector('.colors').innerHTML = getColorHTML(data.colors).join('')
+        document.querySelector('.color-labels').innerHTML = getColorLabelHTML(data.colors).join('')
+    })
 }
 
 document.getElementById('get_scheme').addEventListener('click', handleClick)
