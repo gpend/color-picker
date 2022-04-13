@@ -3,12 +3,12 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: black;
+    font-family: 'Roboto', sans-serif;
 }
 
 header{
     width: 550px;
     height: 90px;
-    margin-top: 2em;
     display: flex;
     justify-content: space-around;
     background-color: white;
@@ -16,5 +16,29 @@ header{
 }
 
 main{
+    background-color: white;
+    height: 550px;
+    margin-top: 2em;
+}
 
+header select,
+header input,
+header button{
+    height: 42px;
+    border: 1px solid lightgray;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+header input{
+    background-color: #E5E5E5;
+}
+
+header select{
+    border-radius: 6px;
+    width: 312px;
+}
+
+header button{
+    border-radius: 4px;
 }
