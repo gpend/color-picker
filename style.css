@@ -50,7 +50,9 @@ header button:hover,
 header button:focus{
     cursor: pointer;
 }
-/* header button:   do something while clicked */
+header button:active{
+    border: 1px solid orange;
+}
 
 .colors{
     height: 414px;
