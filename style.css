@@ -22,7 +22,6 @@ main{
     background-color: white;
     height: 550px;
     margin-top: 2em;
-    /* z-index: -100; */
 }
 
 header select,
@@ -46,6 +45,12 @@ header select{
 header button{
     border-radius: 4px;
 }
+
+header button:hover,
+header button:focus{
+    cursor: pointer;
+}
+/* header button:   do something while clicked */
 
 .colors{
     height: 414px;
